@@ -1,60 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Web App Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Setup Instructions
 
-## About Laravel
+### Requirements:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   PHP (version 7.x or higher)
+-   Composer
+-   MySQL or a compatible database
+-   Laravel
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Steps to Setup the Project
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Clone the repository:**
+   git clone https://github.com/loretaimerii/webApp.git
+   cd webApp
 
-## Learning Laravel
+2. **Install dependencies: Use Composer to install all required packages:**
+   composer install
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. **Configure environment variables: Copy the .env.example file to .env:**
+   cp .env.example .env
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+4. **Generate application key: Run the following command to generate an application key:**
+   php artisan key:generate
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5. **Set up the database: Run the migrations to create the necessary database tables:**
+   php artisan migrate
 
-## Laravel Sponsors
+6. **Run the application: Start the application locally using:**
+   php artisan serve
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Project Structure
 
-### Premium Partners
+app/: Contains the application's core logic, including models and controllers.
+resources/views/: Contains the Blade template views for rendering the HTML.
+routes/web.php: Defines the routes for the application (e.g., home, profile, login).
+database/migrations/: Contains the migration files used to create and update the database schema.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+### Features implemented
 
-## Contributing
+1. Authentication
+   User registration
+   User login and logout
+   Laravel's built-in authentication via Laravel Breeze
+   Session-based access control
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Post Management
+   Authenticated users can: create new posts, view a list of all posts, delete only their own posts
 
-## Code of Conduct
+3. User Profile Page
+   Each user has a dedicated profile page and can modify their personal data
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Homepage
+   Lists all posts from all users
+   Each post has: a title, body content, name of the creator and timestamps
 
-## Security Vulnerabilities
+5. Pagination
+   Posts should be displayed in a paginated table
+   Show 5 posts per page
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Notes
+
+Make sure to update the .env file with your correct database configuration before running the migrations.
+This project uses Laravel's built-in authentication system and blade templating engine for dynamic content rendering.
+The app is designed to handle user profiles, allowing users to update their details and view posts dynamically.
 
 ## License
 
